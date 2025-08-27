@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-lato text-gray-800 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-montserrat font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-dark;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white hover:bg-white/10;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-6 font-montserrat;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-gray-600 max-w-3xl mx-auto mb-12;
+  }
+
+  .button-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .button-glow::after {
+    content: '';
+    @apply absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-[-45deg];
+    animation: button-shine 3s infinite;
+  }
+
+  /* Plans Swiper Customization */
+  .plans-swiper {
+    @apply pb-12;
+  }
+
+  .plans-swiper .swiper-slide {
+    @apply h-auto;
+  }
+
+  .plans-swiper .swiper-slide > div {
+    @apply h-full flex flex-col;
+  }
+
+  .plans-swiper .swiper-button-next,
+  .plans-swiper .swiper-button-prev {
+    @apply text-blue-600 dark:text-blue-400;
+    --swiper-navigation-size: 24px;
+  }
+
+  .plans-swiper .swiper-button-next:after,
+  .plans-swiper .swiper-button-prev:after {
+    @apply font-bold;
+  }
+
+  .plans-swiper .swiper-pagination-bullet {
+    @apply bg-blue-600/50 dark:bg-blue-400/50;
+  }
+
+  .plans-swiper .swiper-pagination-bullet-active {
+    @apply bg-blue-600 dark:bg-blue-400;
+  }
+
+  .plans-swiper .swiper-pagination {
+    @apply bottom-0;
+  }
+
+  /* Testimonials Carousel Customization */
+  .testimonials-carousel {
+    @apply overflow-visible;
+  }
+
+  .testimonials-carousel .swiper-wrapper {
+    @apply overflow-visible;
+  }
+
+  .testimonials-carousel .swiper-slide {
+    @apply overflow-visible;
+  }
+
+  .testimonials-carousel .swiper-button-next,
+  .testimonials-carousel .swiper-button-prev {
+    @apply text-white bg-black/50 rounded-full w-10 h-10;
+    --swiper-navigation-size: 20px;
+  }
+
+  .testimonials-carousel .swiper-button-next:after,
+  .testimonials-carousel .swiper-button-prev:after {
+    @apply font-bold;
+  }
+
+  .testimonials-carousel .swiper-pagination-bullet {
+    @apply bg-white/50;
+  }
+
+  .testimonials-carousel .swiper-pagination-bullet-active {
+    @apply bg-white;
+  }
+}
+
+@keyframes button-shine {
+  0% {
+    transform: translateX(-100%) skewX(-45deg);
+  }
+  50% {
+    transform: translateX(100%) skewX(-45deg);
+  }
+  100% {
+    transform: translateX(100%) skewX(-45deg);
+  }
+}
+
+@keyframes drainProgress {
+  0% {
+    width: 100%;
+    background-color: #ef4444;
+  }
+  50% {
+    background-color: #ef4444;
+  }
+  100% {
+    width: 15%;
+    background-color: #ef4444;
+  }
+}
+
+@keyframes pulse-attention {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* ANIMAÇÃO COMPLETAMENTE FIXA - SEM VIBRAÇÃO */
+@keyframes pulse-urgent-fixed {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+  }
+}
+
+.animate-pulse-attention {
+  animation: pulse-attention 2s ease-in-out infinite;
+}
+
+.animate-pulse-urgent-fixed {
+  animation: pulse-urgent-fixed 4s ease-in-out infinite;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-accent/50;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-accent;
+}
+
+/* Enhanced Exit Popup Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: rgb(251, 191, 36);
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+  }
+  50% {
+    border-color: rgb(249, 115, 22);
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+/* WhatsApp Button Animations */
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsapp-pulse 3s ease-in-out infinite;
+}

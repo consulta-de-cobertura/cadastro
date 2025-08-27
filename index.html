@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Federal Associados - Conectividade Sem Limites</title>
+    <meta name="description" content="Assine seu plano da Federal Associados com internet e ligações ilimitadas para todo o Brasil" />
+    <meta name="keywords" content="Federal Associados, planos de internet, internet ilimitada, internet 4G, plano 5G, associação de internet, plano sem fidelidade, internet sem SPC, plano com ligações ilimitadas, internet com cobertura nacional, planos para celular, internet para todo o Brasil, planos baratos de internet, Federal planos, contratar plano de internet, plano com WhatsApp grátis">
+    <meta property="og:title" content="Assine seu plano da Federal Associados com internet e ligações ilimitadas para todo o Brasil" />
+    <meta property="og:description" content="Assine seu plano da Federal Associados com internet e ligações ilimitadas para todo o Brasil" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7T2LG57G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LE7T2LG57G');
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('a');
+
+        links.forEach(link => {
+          link.addEventListener('click', function () {
+            const href = link.getAttribute('href');
+
+            if (href.includes('whatsapp')) {
+              gtag('event', 'click_whatsapp', {
+                event_category: 'Engajamento',
+                event_label: href
+              });
+            }
+
+            if (href.includes('cadastro')) {
+              gtag('event', 'click_cadastro', {
+                event_category: 'Conversão',
+                event_label: href
+              });
+            }
+
+            // Enviar todos os cliques genéricos
+            gtag('event', 'click_link', {
+              event_category: 'Todos os cliques',
+              event_label: href
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
