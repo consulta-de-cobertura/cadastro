@@ -38,7 +38,7 @@ const CadastroModal: React.FC<CadastroModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* Vídeo com tamanho ainda menor */}
-            <div className="relative mb-6 rounded-xl overflow-hidden shadow-lg max-w-sm md:max-w-md mx-auto">
+            <div className="relative mb-6 rounded-xl overflow-hidden shadow-lg max-w-xs mx-auto" style={{ maxWidth: '280px' }}>
               <video
                 className="w-full h-auto object-contain bg-black"
                 controls
@@ -81,6 +81,7 @@ const CadastroModal: React.FC<CadastroModalProps> = ({ isOpen, onClose }) => {
                     video {
                       object-fit: contain !important;
                       background-color: #000 !important;
+                      max-height: 200px !important;
                     }
                   `}
                 </style>
